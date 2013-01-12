@@ -9,7 +9,7 @@ describe Termpic::Image do
       @image = Termpic::Image.new(TermpicTestImage::SAMPLE_IMAGE_PATH)
     }
     it "" do
-      @image.to_ansi
+      @image.draw
     end
   end
 end
