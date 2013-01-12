@@ -1,0 +1,4 @@
+#!/usr/bin/ruby
+require "termpic"
+Termpic::Image.new(ARGV[0]).draw
+
