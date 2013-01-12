@@ -1,11 +1,12 @@
 module Termpic
   class Image
-    def initialize(path)
+    def initialize(path, options = {})
       @image = Magick::ImageList.new(path)
+      @fit_terminal = !!options[:fit_terminal]
     end
 
     def draw
-      convert_to_fit_terminal_width
+      convert_to_fit_terminal_width if @fit_terminal
       rgb_analyze
       ansi_analyze
       puts_ansi

@@ -1,4 +1,10 @@
 #!/usr/bin/ruby
+require "optparse"
 require "termpic"
-Termpic::Image.new(ARGV[0]).draw
+
+options = {}
+opt = OptionParser.new
+opt.on('-f') {|v| options[:fit_terminal] = true }
+opt.parse!(ARGV)
+Termpic::Image.new(ARGV[0], options).draw
 
