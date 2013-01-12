@@ -1,4 +1,5 @@
 require "RMagick"
+require "rainbow"
 require "termpic/image"
 require "termpic/version"
 
