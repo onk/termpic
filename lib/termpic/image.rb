@@ -5,9 +5,15 @@ module Termpic
     end
 
     def draw
+      convert_to_fit_terminal_width
       rgb_analyze
       ansi_analyze
       puts_ansi
+    end
+
+    def convert_to_fit_terminal_width
+      term_height, term_width = `stty size`.split(" ").map(&:to_i)
+      @image = @image.resize_to_fit(term_width, term_height)
     end
 
     def rgb_analyze
