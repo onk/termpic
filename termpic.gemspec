@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Termpic::VERSION
   gem.authors       = ["onk"]
   gem.email         = ["takafumi.onaka@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = "Display images in terminal."
+  gem.summary       = "Display images in terminal."
+  gem.homepage      = "https://github.com/onk/termpic"
   gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
