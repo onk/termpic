@@ -6,14 +6,14 @@ module Termpic
     end
 
     def draw
-      convert_to_fit_terminal_width if @fit_terminal
+      convert_to_fit_terminal_size if @fit_terminal
       rgb_analyze
       ansi_analyze
       puts_ansi
     end
 
-    def convert_to_fit_terminal_width
-      term_height, term_width = `stty size`.split(" ").map(&:to_i)
+    def convert_to_fit_terminal_size
+      term_height, term_width = get_term_size
       @image = @image.resize_to_fit(term_width, term_height)
     end
 
@@ -48,6 +48,10 @@ module Termpic
     def puts_ansi
       raise "use ansi_analyze before to_ansi" unless @ansi
       puts @ansi
+    end
+
+    def get_term_size
+      `stty size`.split(" ").map(&:to_i)
     end
   end
 end
