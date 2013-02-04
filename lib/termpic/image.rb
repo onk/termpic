@@ -3,6 +3,7 @@ module Termpic
     def initialize(path, options = {})
       @image = Magick::ImageList.new(path)
       @fit_terminal = !!options[:fit_terminal]
+      @show_size = !!options[:show_size]
     end
 
     def draw
@@ -10,6 +11,7 @@ module Termpic
       rgb_analyze
       ansi_analyze
       puts_ansi
+      puts_size if @show_size
     end
 
     def convert_to_fit_terminal_size
@@ -48,6 +50,10 @@ module Termpic
     def puts_ansi
       raise "use ansi_analyze before to_ansi" unless @ansi
       puts @ansi
+    end
+
+    def puts_size
+      puts "#{@image.columns}x#{@image.rows}"
     end
 
     def get_term_size
