@@ -1,4 +1,4 @@
-## Termpic 0.0.4 (unreleased)
+## Termpic 0.0.4 (2013-02-12)
 
 *   fix showing resized size bug when both of "-s" and "-f"
 *   remove dependency to rainbow gem
