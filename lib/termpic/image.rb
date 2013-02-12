@@ -16,7 +16,7 @@ module Termpic
 
     def convert_to_fit_terminal_size
       term_height, term_width = get_term_size
-      @image = @image.resize_to_fit(term_width, term_height)
+      @image = @image.resize_to_fit(term_width / 2, term_height)
     end
 
     def rgb_analyze
@@ -41,7 +41,7 @@ module Termpic
       @rgb.map! do |row|
         ret << row.map{|pixcel|
           r, g, b = pixcel
-          " ".background(r, g, b)
+          "  ".background(r, g, b)
         }.join
       end
       @ansi = ret.join("\n")

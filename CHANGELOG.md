@@ -1,3 +1,7 @@
+## Termpic 0.0.4 (unreleased)
+
+*   use double spaces for drawing
+
 ## Termpic 0.0.3 (2013-02-05)
 
 *   add -s option to show images cols and rows
