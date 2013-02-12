@@ -16,6 +16,7 @@ module Termpic
 
     def convert_to_fit_terminal_size
       term_height, term_width = get_term_size
+      @orig_image = @image
       @image = @image.resize_to_fit(term_width / 2, term_height)
     end
 
@@ -52,7 +53,11 @@ module Termpic
     end
 
     def puts_size
-      puts "#{@image.columns}x#{@image.rows}"
+      if @orig_image
+        puts "#{@orig_image.columns}x#{@orig_image.rows}"
+      else
+        puts "#{@image.columns}x#{@image.rows}"
+      end
     end
 
     def get_term_size

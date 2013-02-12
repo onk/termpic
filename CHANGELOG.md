@@ -1,5 +1,6 @@
 ## Termpic 0.0.4 (unreleased)
 
+*   fix showing resized size bug when both of "-s" and "-f"
 *   remove dependency to rainbow gem
 *   use double spaces for drawing
 
