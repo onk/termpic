@@ -1,5 +1,6 @@
 ## Termpic 0.0.4 (unreleased)
 
+*   remove dependency to rainbow gem
 *   use double spaces for drawing
 
 ## Termpic 0.0.3 (2013-02-05)

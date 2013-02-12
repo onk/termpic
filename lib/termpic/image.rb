@@ -40,8 +40,7 @@ module Termpic
       ret = []
       @rgb.map! do |row|
         ret << row.map{|pixcel|
-          r, g, b = pixcel
-          "  ".background(r, g, b)
+          AnsiRgb.wrap_with_code("  ", pixcel)
         }.join
       end
       @ansi = ret.join("\n")

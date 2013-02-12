@@ -1,6 +1,6 @@
 require "RMagick"
-require "rainbow"
 require "termpic/image"
+require "termpic/ansi_rgb"
 require "termpic/version"
 
 module Termpic
