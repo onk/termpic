@@ -4,6 +4,7 @@ module Termpic
       @image = Magick::ImageList.new(path)
       @fit_terminal = !!options[:fit_terminal]
       @show_size = !!options[:show_size]
+      @double = !!options[:double]
     end
 
     def draw
@@ -16,8 +17,9 @@ module Termpic
 
     def convert_to_fit_terminal_size
       term_height, term_width = get_term_size
+      term_width = term_width / 2 if @double
       @orig_image = @image
-      @image = @image.resize_to_fit(term_width / 2, term_height)
+      @image = @image.resize_to_fit(term_width, term_height)
     end
 
     def rgb_analyze
@@ -41,7 +43,7 @@ module Termpic
       ret = []
       @rgb.map! do |row|
         ret << row.map{|pixcel|
-          AnsiRgb.wrap_with_code("  ", pixcel)
+          AnsiRgb.wrap_with_code(@double ? "  " : " ", pixcel)
         }.join
       end
       @ansi = ret.join("\n")

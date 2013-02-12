@@ -1,3 +1,7 @@
+## Termpic 0.0.5 (unreleased)
+
+*   extract to "-d" option to using double spaces
+
 ## Termpic 0.0.4 (2013-02-12)
 
 *   fix showing resized size bug when both of "-s" and "-f"
