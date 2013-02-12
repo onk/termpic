@@ -1,29 +1,24 @@
-# Termpic
+Termpic
+================================
 
-TODO: Write a gem description
+Display images in terminal using ANSI background color.
 
-## Installation
+![sample](https://raw.github.com/onk/termpic/master/public/sample.png)
 
-Add this line to your application's Gemfile:
+Installation
+------------------------------------------------------------------------
 
-    gem 'termpic'
+```
+$ gem install termpic
+```
 
-And then execute:
+Author
+------------------------------------------------------------------------
 
-    $ bundle
+onk &lt;takafumi.onaka@gmail.com&gt; (@onk)
 
-Or install it yourself as:
+License
+------------------------------------------------------------------------
 
-    $ gem install termpic
+Licensed under the MIT license.
 
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
