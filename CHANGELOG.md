@@ -1,4 +1,4 @@
-## Termpic 0.0.5 (unreleased)
+## Termpic 0.0.5 (2013-02-24)
 
 *   add --domain option for alternate `open`
 *   extract to "-d" option to using double spaces
