@@ -5,6 +5,8 @@ module Termpic
       @fit_terminal = !!options[:fit_terminal]
       @show_size = !!options[:show_size]
       @double = !!options[:double]
+      @path = path
+      @domain = options[:domain]
     end
 
     def draw
@@ -13,6 +15,7 @@ module Termpic
       ansi_analyze
       puts_ansi
       puts_size if @show_size
+      puts_url if @domain
     end
 
     def convert_to_fit_terminal_size
@@ -59,6 +62,19 @@ module Termpic
         puts "#{@orig_image.columns}x#{@orig_image.rows}"
       else
         puts "#{@image.columns}x#{@image.rows}"
+      end
+    end
+
+    def puts_url
+      public_marker_dirs = ["public", "assets"]
+      full_path = File.absolute_path(@path)
+      dirs = full_path.split(File::SEPARATOR)
+      idx = dirs.rindex{|dir| public_marker_dirs.include?(dir) }
+      case dirs[idx]
+      when "public"
+        puts "http://#{@domain}/#{dirs[idx+1 .. -1].join("/")}"
+      when "assets"
+        puts "http://#{@domain}/#{dirs[idx .. -1].join("/")}"
       end
     end
 

@@ -7,6 +7,7 @@ opt = OptionParser.new
 opt.on('-f') {|v| options[:fit_terminal] = true }
 opt.on('-s') {|v| options[:show_size] = true }
 opt.on('-d') {|v| options[:double] = true }
+opt.on('--domain=VAL') {|v| options[:domain] = v }
 opt.parse!(ARGV)
 Termpic::Image.new(ARGV[0], options).draw
 
