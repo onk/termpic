@@ -1,3 +1,4 @@
+require "io/console"
 module Termpic
   class Image
     def initialize(path, options = {})
@@ -19,7 +20,7 @@ module Termpic
     end
 
     def convert_to_fit_terminal_size
-      term_height, term_width = get_term_size
+      term_height, term_width = IO.console.winsize
       term_width = term_width / 2 if @double
       @orig_image = @image
       @image = @image.resize_to_fit(term_width, term_height)
@@ -76,10 +77,6 @@ module Termpic
       when "assets"
         puts "http://#{@domain}/#{dirs[idx .. -1].join("/")}"
       end
-    end
-
-    def get_term_size
-      `stty size`.split(" ").map(&:to_i)
     end
   end
 end
